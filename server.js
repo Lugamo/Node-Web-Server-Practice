@@ -26,10 +26,12 @@ app.use((req, res, next) => {
   });
   next();
 });
-app.use((req, res, complete) => {
-  res.render('maintenance.hbs');
-});
+// when the web is in maintenance
+// app.use((req, res, complete) => {
+//   res.render('maintenance.hbs');
+// });
 app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req,res) => {
    res.render('home.hbs', {
      pageTitle: 'Home Page',
@@ -47,6 +49,12 @@ app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Unable to fullfil this request'
     });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    NumberOfProjects: 3
+  })
 });
 
 app.listen(port, () => {
