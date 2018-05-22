@@ -53,6 +53,7 @@ app.get('/bad', (req, res) => {
 
 app.get('/projects', (req, res) => {
   res.render('projects.hbs', {
+    pageTitle: 'Projects',
     NumberOfProjects: 3
   })
 });
