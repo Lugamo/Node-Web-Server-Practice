@@ -26,7 +26,7 @@ app.use((req, res, next) => {
   });
   next();
 });
-// when the web is in maintenance
+//when the web is in maintenance
 // app.use((req, res, complete) => {
 //   res.render('maintenance.hbs');
 // });
@@ -35,7 +35,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', (req,res) => {
    res.render('home.hbs', {
      pageTitle: 'Home Page',
-     mainText: 'Welcome Dude'
+     mainText: 'amazing'
    });
 });
 
@@ -54,10 +54,10 @@ app.get('/bad', (req, res) => {
 app.get('/projects', (req, res) => {
   res.render('projects.hbs', {
     pageTitle: 'Projects',
-    NumberOfProjects: 3
+    NumberOfProjects: 7
   })
 });
 
-app.listen(port, () => {
+app.listen(3000, () => {
    console.log(`Example app listening on port ${port}`)
 });
